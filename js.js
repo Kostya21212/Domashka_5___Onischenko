@@ -1,9 +1,9 @@
 debugger
-let userHryvnya = 40 ;
+const userHryvnya = 40 ;
 
 for(let dollars = 10; dollars <= 100;dollars+=10) {
-    let Valuta = dollars * userHryvnya;
-    alert(`${dollars} долларів = ${Valuta} гривень`)}
+    let valuta = dollars * userHryvnya;
+    alert(`${dollars} долларів = ${valuta} гривень`)}
 
 
 const userEnterValidNum = prompt('Введіть число');
@@ -11,13 +11,15 @@ const userEnterValidNum = prompt('Введіть число');
 if (userEnterValidNum === null) {
   alert('Як ви бажаєте');
 } else {
-  const parsedNum = +userEnterValidNum;
+  const input = userEnterValidNum.trim(); 
+  const parsedNum = +input;
 
-  if (isNaN(parsedNum) || parsedNum < 2 || !Number.isInteger(parsedNum)) {
-    alert('Помилка: невірне число!');
+  let isPrime = true;
+
+  if (!input || !Number.isInteger(parsedNum) || parsedNum < 2) {
+    isPrime = false;
   } else {
     const numberPrime = parsedNum;
-    let isPrime = true;
 
     for (let i = 2; i <= Math.sqrt(numberPrime); i++) {
       if (numberPrime % i === 0) {
@@ -25,38 +27,44 @@ if (userEnterValidNum === null) {
         break;
       }
     }
+  }
 
-    if (isPrime) {
-      alert(`${numberPrime} є простим числом`);
-    } else {
-      alert(`${numberPrime} не є простим числом`);
-    }
+  if (!isPrime) {
+    alert(` Не є простим числом `);
+  } else {
+    alert(`Є простим числом`);
   }
 }
 
+
 let UserAddNumber = prompt('Введіть число');
 
-if (UserAddNumber === null || isNaN(UserAddNumber)) {
-    alert('Введіть число!');
+
+if (UserAddNumber === null) {
+  alert('Як ви бажаєте');
+} else {
+  
+  const trimmedInput = UserAddNumber.trim();
+
+  if (trimmedInput === '' || isNaN(trimmedInput)) {
+    alert('Помилка: введено некоректне число або порожній рядок');
   } else {
-    // Перетворення введеного рядка в число
-    UserAddNumber = +UserAddNumber;
-  
-    // Флаг для визначення, чи число можна отримати
+   
+    UserAddNumber = +trimmedInput;
+
+    
     let isNumberObtainable = false;
-  
-    // Перевірка, чи число можна отримати для значень від 1 до введеного числа
+
+    
     for (let i = 1; i <= UserAddNumber; i++) {
-      if (UserAddNumber % i === 0 && i % 3 === 0) {
+      if (UserAddNumber % i === 0 && (i % 3 === 0 )) {
         isNumberObtainable = true;
-        break; 
+        break;
       }
     }
-  
-    
-    if (isNumberObtainable) {
-      alert('Число можна отримати');
-    } else {
-      alert('Число не можна отримати');
-    }
-  }
+    alert(
+      trimmedInput === '' || isNaN(trimmedInput) || /^0\d+/.test(trimmedInput) || trimmedInput <= 0
+        ? 'Число не можна отримати або введено некоректне число'
+        : `Число ${+trimmedInput % 3 === 0 ? 'можна отримати' : 'не можна отримати'}`
+    );
+}}
