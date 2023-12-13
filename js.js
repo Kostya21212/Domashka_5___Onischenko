@@ -1,40 +1,40 @@
-// debugger
-// const userHryvnya = 40 ;
+debugger
+const userHryvnya = 40 ;
 
-// for(let dollars = 10; dollars <= 100;dollars+=10) {
-//     const valuta = dollars * userHryvnya;
-//     alert(`${dollars} долларів = ${valuta} гривень`)}
+for(let dollars = 10; dollars <= 100;dollars+=10) {
+    const valuta = dollars * userHryvnya;
+    alert(`${dollars} долларів = ${valuta} гривень`)}
 
 
-// const userEnterValidNum = prompt('Введіть число');
+const userEnterValidNum = prompt('Введіть число');
 
-// if (userEnterValidNum === null) {
-//   alert('Як ви бажаєте');
-// } else {
-//   const input = userEnterValidNum.trim(); 
-//   const parsedNum = +input;
+if (userEnterValidNum === null) {
+  alert('Як ви бажаєте');
+} else {
+  const input = userEnterValidNum.trim(); 
+  const parsedNum = +input;
 
-//   let isPrime = true;
+  let isPrime = true;
 
-//   if (!input || !Number.isInteger(parsedNum) || parsedNum < 2) {
-//     isPrime = false;
-//   } else {
-//     const numberPrime = parsedNum;
+  if (!input || !Number.isInteger(parsedNum) || parsedNum < 2) {
+    isPrime = false;
+  } else {
+    const numberPrime = parsedNum;
 
-//     for (let i = 2; i <= Math.sqrt(numberPrime); i++) {
-//       if (numberPrime % i === 0) {
-//         isPrime = false;
-//         break;
-//       }
-//     }
-//   }
+    for (let i = 2; i <= Math.sqrt(numberPrime); i++) {
+      if (numberPrime % i === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+  }
 
-//   if (!isPrime) {
-//     alert(` Не є простим числом `);
-//   } else {
-//     alert(`Є простим числом`);
-//   }
-// }
+  if (!isPrime) {
+    alert(` Не є простим числом `);
+  } else {
+    alert(`Є простим числом`);
+  }
+}
 
 let UserAddNumber = prompt('Введіть число');
 
